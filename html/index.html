@@ -1,0 +1,464 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav__logo">
+            <a href="">IPR</a>
+            <span>crm</span>
+        </div>
+        <div class="nav__urls">
+            <a class="bty" href="" >Перейти на PRO</a>
+            <a href="">Инструменты</a>
+            <a href="">Выход</a>
+        </div>
+    </div>
+    <br>
+    <div class="content">
+        <div class="content__title">
+            <div class="main">Заказы</div>
+            <div class="info">Список зарегистрированных заказов </div>
+        </div>
+        <div class="statistics">
+            <div class="elem-wrapper">
+                <p><span id="done" class="count">0</span><span class="name">Готово</span></p>
+                
+            </div>
+            <div class="elem-wrapper">
+                <p><span id="progress" class="count">0</span><span class="name">В разработке</span></p>
+                
+            </div>
+            <div class="elem-wrapper">
+                <p><span id="payment" class="count">0</span><span class="name">Ожидание оплаты</span></p>
+                
+            </div>
+            <div class="elem-wrapper">
+                <p><span id="support" class="count">0</span><span class="name">Обсуждается</span></p>
+                
+            </div>
+            <div class="elem-wrapper">
+                <p><span id="salary" class="count">0</span><span class="name">Заработано</span></p>
+            </div>
+        </div>
+        <div class="sales">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Клиент</th>
+                        <th>Тема</th>
+                        <th>Срок</th>
+                        <th>Стоимость</th>
+                        <th>Этап</th>
+                        <th class="action-panel">Управление</th>
+                    </tr>
+                </thead>
+                <tbody id="itemList" >
+                    
+                </tbody>
+                
+            </table>
+            <table class="table">
+                <thead>
+                    Добавить
+                    <tr>
+                        <th><input type="text" name=""  id="client" placeholder="Клиент" ></th>
+                        <th><input type="text" name="" id="team" placeholder="Тема" ></th>
+                        <th><input type="number" name="" id="deadline" min="1" max="8" placeholder="Срок"  ></th>
+                        <th><input type="number" name="" id="price" placeholder="Стоимость" ></th>
+                        <th><select id="stageList"  >
+                            
+                            
+                        </select></th>
+                        <th class="action-panel"> 
+                            <button class="edit" id="addOrEdit" onclick="AddSale()">Добавить</button>
+                        </th>
+                        
+                        
+                    </tr>
+                </thead>
+                
+                
+            </table>
+        </div>
+    </div>
+        <script src="main.js"></script>
+</body>
+<style>
+
+*{
+        font-family: 'Manrope', sans-serif;
+        color: #88aab6;
+        
+    }
+    input , select{
+        background-color: #212529;
+        border: none;
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        outline: none;
+        text-align: left;
+    }
+    
+    .dataAdd{
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        background-color: #212529;
+        border: 1px solid #88aab6;
+        border-radius: 40px;
+    }
+    body{
+        background-color: #212529;
+    }
+    .sales{
+        
+        min-width: none;
+        margin:20px auto;
+        max-width: 1270px;
+    }
+    .table {
+	width: 100%;
+	margin-bottom: 20px;
+	
+	border-collapse: collapse; 
+}
+.table thead th {
+	font-weight: bold;
+	padding: 15px;
+	background: #212529;
+    font-weight: 800;
+    border: none;
+    border-bottom:2px solid #88aab6;
+
+	
+}
+table tbody th {
+	font-weight: bold;
+	padding: 15px;
+	background: #212529;
+    font-weight: 100;
+    border: none;
+    
+    border-bottom:1px solid #88aab6;
+	
+}
+.table th .action-panel{
+    text-align: right;
+}
+.table td {
+	font-weight: 200;
+	padding: 5px;
+    text-align: center;
+    border: none;
+    border-bottom: 0.5px solid #88aab6;
+}
+.delete{
+    background-color: rgb(187, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+.edit{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+.panel{
+    width: max-content;
+    margin: auto;
+}
+
+.delete:hover{
+    cursor: pointer;
+}
+.edit:hover{
+    cursor: pointer;
+}
+
+    .sales{
+        padding:10px 0px;
+    }
+    .sales-table{
+        display: flex;
+    }
+  
+    
+    *{
+        margin: 0;
+        border: none;
+        padding: 0;
+        text-decoration: none;
+        color: #88AAB6;
+    } 
+    hr{
+        border: 1px solid #88AAB6;
+    }
+    body{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        background-color: #212529;
+    }
+    .nav{
+        width: 1266px;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        
+
+    }
+    .nav__logo{
+        flex: 1;
+        font-size: 32px;
+        color: #88AAB6;
+    }
+    .nav__logo a{
+        color: #88AAB6;
+       
+    }
+    .nav__logo span{
+        font-size: 16px;
+    }
+    .nav__urls{
+        flex: 1;
+        text-align: right;
+    }
+    .nav__urls .bty {
+        background-color: #0D6EFD;
+        color: #ffffff;
+        padding: 10px 40px;
+        margin-right: 30px;
+        border-radius: 6px;
+        
+    }
+    .nav__urls a{
+        margin-right: 30px;
+    }
+    .content{
+        width: 1266px;  
+        margin: 0 auto;
+        border: none;
+       
+    }
+    .content__title{
+        margin-top: 59px;
+    }
+    .content__title .main{
+        font-size: 40px;
+    }
+    .content__title .info {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+    .data_forms{
+        margin-top: 54px;
+    }
+    .person{
+        margin-top: 30px;
+    }
+    .person__title{
+        font-size: 24px;
+        margin-bottom: 22px;
+    }
+    .person-forms{
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: auto;
+        margin-top: 31px;
+    }
+    .form-input-text{
+       margin-top: 20px;
+    }
+
+    .form-input-date {
+        margin-top: 20px;
+    }
+    .form-input-select {
+        margin-top: 20px;
+    }
+    .form-input-select select{
+        width: 340px;
+        margin-top: 5px;
+        
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 9px;
+        background-color: #212529;
+        border: 1px solid #88AAB6;
+        color: #88aab6b0;
+    }
+    .form-input-learnform{
+        margin-top: 20px;
+    }
+    .form-input-learnform select{
+        
+        margin-top: 5px;
+        margin-right: 5px;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: #212529;
+        border: 1px solid #88AAB6;
+        color: #88aab6b0;
+        margin-bottom: 9px;
+    }
+    .title{
+        font-weight: 400;
+    }
+    
+    .form-input-date input{
+        margin-top: 5px;
+        width:150px ;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: #212529;
+        border: 1px solid #88AAB6;
+        color: #88aab6b0;
+    }
+
+    select option{
+        background-color: #212529;
+        color: #88AAB6;
+        border: 43px solid #88AAB6;
+    }
+    input[type=file]{
+        outline: none;
+        display: none;
+        opacity: 0;
+    }
+    .form-input-file {
+        margin-top: 20px;
+    }
+    
+    .form-input-file .label div{
+        margin-top: 5px;
+        width: 340px;
+        background-color: #212529;
+        border: 1.4px solid #88AAB6;
+        border-radius: 6px;
+        padding: 10px 12px;
+        margin-bottom: 0px;
+        outline: none;
+    font-weight: 300;
+    }
+    .form-input-text input{
+        margin-top: 5px;
+        
+        width: 340px;
+        background-color: #212529;
+        border: 1.4px solid #88AAB6;
+        border-radius: 6px;
+        padding: 10px 12px;
+        margin-bottom: 9px;
+        outline: none;
+    }
+    
+    .help-text{
+        font-weight: 300;
+        font-size: 14px;
+    }
+    ::placeholder{
+        font-weight:lighter;
+        font-size: 13px;
+        color: #88aab6b0;
+    }
+    .itemList th{
+        font-weight: 100;
+    }
+    .statistics{
+
+        margin-top: 20px;
+        width: 100%;
+        height: 100px;
+        
+        display: flex;
+    }
+    .elem-wrapper{
+        border-radius: 6px;
+        margin: 5px;
+        border: 2px solid;
+        
+        padding: 0 20px;
+        justify-content: center;
+        
+        display: flex;
+    }
+    .elem-wrapper p{
+        display: flex;
+        
+    }
+    .count{
+        
+        padding: 10px;
+        font-size: 40px;
+       margin: auto;
+    }
+    .name{
+    
+        margin: auto;
+        padding: 10px;
+    }
+
+    .stage_step_0{
+        margin: auto;
+        background-color: #FF0000;
+        color: #ffffff;
+        border-radius: 6px;
+        padding:10px 0;
+        width: 200px;
+        font-weight: 600;
+        
+    }
+    .stage_step_1{
+        margin: auto;
+        background-color: #0D6EFD;
+        color: #ffffff;
+        border-radius: 6px;
+        padding:10px 0;
+        width: 200px;
+        font-weight: 600;
+        
+    }
+    .stage_step_2{
+        margin: auto;
+        background-color: #FAFF00;
+        color: #212529;
+        font-weight: 600;
+        border-radius: 6px;
+        padding:10px 0;
+        width: 200px;
+        
+    }
+    .stage_step_3{
+        margin: auto;
+        background-color: #48C246;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 6px;
+        padding:10px 0;
+        width: 200px;
+        
+    }
+    
+       
+    
+</style>
+</html>

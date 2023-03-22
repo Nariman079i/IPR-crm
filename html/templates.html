@@ -1,0 +1,137 @@
+<div class="data_forms">
+    <div class="person">
+            <div>
+                <p class="person__title">Личность</p>
+                <hr>
+                
+            </div>
+            
+            <div class="person-forms">
+                <div>
+                    <div class="form-input-text">
+            
+                        <label class="title" for="name">Имя</label><br>
+                            <input  class="input-text" type="text" id="name" placeholder="Нариман"> <br>
+                        <label class="help-text" for="name">Введите ваше имя</label>
+                    </div>   
+                    <div class="form-input-text">
+                        <label class="title" for="surname">Фамилия</label><br>
+                            <input  class="input-text" type="text" id="surname" placeholder="Ибрагимов"> <br>
+                        <label class="help-text" for="surname">Введите вашу фамилия</label>
+                    </div>  
+                    <div class="form-input-text">
+                        <label class="title" for="partonymic">Отчество</label><br>
+                            <input  class="input-text" type="text" id="partonymic" placeholder="Ибрагимович"> <br>
+                        <label class="help-text" for="partonymic">Введите ваше отчество</label>
+                    </div> 
+                    <div class="form-input-date">
+                        <label class="title" for="date_birth">Дата рождения</label><br>
+                            <input  class="input-date" type="date_birth" id="date" value="2004-06-15"> 
+                        <label class="help-text" for="date_birth">Введите дату рождения</label>
+                    </div>
+                    <div class="form-input-text">
+                        <label class="title" for="tel">Номер телефона</label><br>
+                            <input  class="input-text" type="tel" id="tel" placeholder="89280608063"> <br>
+                        <label class="help-text" for="tel">Введите номер телефона</label>
+                    </div>
+                    <div class="form-input-text">
+                        <label class="title" for="address">Адресс</label><br>
+                            <input  class="input-text" type="text" id="address" placeholder="г Грусть, ул Печальная дом Разочерования кв 13"> <br>
+                        <label class="help-text" for="address">Введите фактический адрес проживания</label>
+                    </div>
+                </div>
+               <div>
+                <div class="form-input-text">
+                    <label class="title" for="seria">Серия</label><br>
+                        <input  class="input-text" type="number" id="seria"  placeholder="000001"> <br>
+                    <label class="help-text" for="seria">Введите серию паспорта</label>
+                </div>
+                <div class="form-input-text">
+                    <label class="title" for="number">Номер</label><br>
+                        <input  class="input-text" type="number" id="number"  placeholder="0001"> <br>
+                    <label class="help-text" for="number">Введите номер паспорта</label>
+                </div>
+                <div class="form-input-text">
+                    <label class="title" for="issue">Кем выдан</label><br>
+                        <input  class="input-text" type="text" id="issue" maxlength="5" placeholder="2314"> <br>
+                    <label class="help-text" for="issue">Введите кем выдан</label>
+                </div>
+                <div class="form-input-date">
+                    <label class="title" for="date_issue">Дата дата выдачи</label><br>
+                        <input  class="input-date" type="date" id="date_issue" placeholder="Нариман"> 
+                    <label class="help-text" for="date_issue">Введите дату выдачи</label>
+                </div>
+                <div class="form-input-text">
+                    <label class="title" for="code_place">Код подразделения</label><br>
+                        <input  class="input-text" type="text" id="code_place" min="0" max="9999" placeholder="2314"> <br>
+                    <label class="help-text" for="code_place">Введите код подразделения</label>
+                </div>
+                <div class="form-input-text">
+                    <label class="title" for="snils">СНИЛС</label><br>
+                        <input  class="input-text" type="text" id="snils" min="0" max="9999" placeholder="2314"> <br>
+                    <label class="help-text" for="snils">Введите ваш СНИЛС</label>
+                </div>
+                
+               </div>
+                <div>
+                    <div class="form-input-select">
+                        <label class="title" for="specialization">Специальность</label><br>
+                            <select name="" id="specialization">
+                                <option value="0">Выбрать Специальность</option>
+                            </select> <br>
+                        <label class="help-text" for="seria">Выберите Специальность</label>
+                    </div>
+                    <div class="form-input-learnform">
+                        <label class="title" for="seria">Форма обучения</label><br>
+                            <select name="" id="learn_form" disabled>
+                               
+                            </select> 
+                            <select name="" id="type_form">
+                                <option value="0">Бюджет</option>
+                                <option value="0">Платно</option>
+                            </select> 
+                            <select name="" id="base_form">
+                                <option value="0">На базе 9</option>
+                                <option value="1">На базе 11</option>
+                            </select> <br>
+                        <label class="help-text" for="seria">Выберите форму обучения</label>
+                    </div>
+                    <div class="form-input-file">
+                        <label class="label" for="image">
+                            <label for="image" class="title">Скан портрет 3х4</label><br>
+                            <input type="file"  id="image">
+                            <div id="file_add_text">Добавить файл</div>
+                        </label><br>
+                        <script>
+                            
+                     
+                        </script>
+                    </div>
+                    <div class="form-input-file">
+                        <label class="label" for="image_passport">
+                            <label for="image_passport" class="title">Скан паспорта</label><br>
+                            <input type="file"  id="image_passport">
+                            <div id="file_add_text">Добавить файл</div>
+                        </label><br>
+                       
+                    </div>
+                    <div class="form-input-file">
+                        <label class="label" for="image_address">
+                            <label for="image_address" class="title">Скан прописки</label><br>
+                            <input type="file"  id="image_address">
+                            <div id="file_add_text">Добавить файл</div>
+                        </label><br>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+        
+    </div>
+</div>
+<div class="attestat">
+
+</div>
+</div>
+<script src="script.js"></script>
